@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Status</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Connected Devices</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">IP Address</th>
+                    <th scope="col">MAC Address</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for device in devices %}
+                <tr>
+                    <td>{{ device.address }}</td>
+                    <td>{{ device['mac-address'] }}</td>
+                    <td>{{ device.status }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('block_mac') }}">
+                            <input type="hidden" name="mac" value="{{ device['mac-address'] }}">
+                            <button type="submit" class="btn btn-danger">Block</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Usuario</title>
+</head>
+<body>
+    <h1>Agregar Usuario</h1>
+    <form action="{{ url_for('add_user') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>

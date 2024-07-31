@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a202c; /* Dark background color */
+            color: #edf2f7; /* Light text color */
+        }
+        .card {
+            background-color: #2d3748; /* Dark card background */
+            border: none;
+            border-radius: 12px;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .btn-primary {
+            background-color: #4c51bf; /* Custom button color */
+            border: none;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background-color: #434190; /* Darker button color on hover */
+        }
+        .form-control {
+            border-radius: 8px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <h2 class="mb-4 text-2xl font-semibold">Login</h2>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="dst">Router IP:</label>
+                            <input type="text" id="dst" name="dst" class="form-control" placeholder="Enter Router IP" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user">Username:</label>
+                            <input type="text" id="user" name="user" class="form-control" placeholder="Enter Username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passw">Password:</label>
+                            <input type="password" id="passw" name="passw" class="form-control" placeholder="Enter Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="port">Port:</label>
+                            <input type="text" id="port" name="port" class="form-control" value="8728" placeholder="Enter Port">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full py-2">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
